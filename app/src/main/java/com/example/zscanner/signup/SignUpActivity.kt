@@ -94,26 +94,26 @@ class SignUpActivity : AppCompatActivity() {
                     userHashMap["uid"] = firebaseUserID
                     userHashMap["userName"] = userName
                     userHashMap["zucitechID"] = zucitechID
-                    userHashMap["dateOfIssue"] = ""
+
 
 
                     val previousDevice = HashMap<String,Any>()
                     previousDevice["deviceName"] = ""
 
                     val currentDevice = HashMap<String,Any>()
-                    currentDevice["deviceID"] = ""
+                    currentDevice["deviceID"] = "ztdemo"
 
 
                     refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
                         if(task.isSuccessful)
                         {
-                            refUsers = FirebaseDatabase.getInstance(PATH).reference.child("Users").child(firebaseUserID).child("Previous Device")
+                            refUsers = FirebaseDatabase.getInstance(PATH).reference.child("Users").child(firebaseUserID).child("previousDevice")
 
                             refUsers.updateChildren(previousDevice).addOnCompleteListener { task ->
 
                             }
 
-                            refUsers = FirebaseDatabase.getInstance(PATH).reference.child("Users").child(firebaseUserID).child("Device ID")
+                            refUsers = FirebaseDatabase.getInstance(PATH).reference.child("Users").child(firebaseUserID).child("deviceID")
 
                             refUsers.updateChildren(currentDevice).addOnCompleteListener { task ->
 

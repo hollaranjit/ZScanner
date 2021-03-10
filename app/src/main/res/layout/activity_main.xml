@@ -28,14 +28,28 @@
 
     <Button
         android:id="@+id/btnUpdate"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_above="@id/btnExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Update" />
 
     <Button
+        android:id="@+id/btnReceive"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_above="@id/btnExit"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:text="Recieve" />
+
+    <Button
         android:id="@+id/btnExit"
         android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Exit" />
